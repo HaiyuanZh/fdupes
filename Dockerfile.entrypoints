@@ -2,10 +2,11 @@ FROM alpine
 
 ENV LABEL_MAINTAINER="Jean-Michel Ruiz (coolcow) <mail@coolcow.org>" \
     LABEL_VENDOR="coolcow.org" \
-    LABEL_ORI_IMAGE_NAME="farmcoolcow/entrypoints" \
+    ORI_LABEL_IMAGE_NAME="farmcoolcow/entrypoints" \
     LABEL_IMAGE_NAME="haiyuanzhang/entrypoints" \
     LABEL_URL="https://hub.docker.com/r/farmcoolcow/entrypoints/" \
-    LABEL_VCS_URL="https://github.com/farmcoolcow/docker_entrypoints" \
+    ORI_LABEL_VCS_URL="https://github.com/farmcoolcow/docker_entrypoints" \
+    LABEL_VCS_URL="https://github.com/HaiyuanZh/fdupes" \
     LABEL_DESCRIPTION="Docker base image with su-exec and crond entrypoint scripts, based on alpine." \
     LABEL_LICENSE="GPL-3.0"
 
