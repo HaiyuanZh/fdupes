@@ -17,15 +17,24 @@ ENV LABEL_MAINTAINER="Jean-Michel Ruiz (coolcow) <mail@coolcow.org>" \
 
 RUN apk --no-cache --update add \
       alpine-sdk \
+      autoconf \
+      automake \
       git \
+    && apk add \
+      ncurses-dev \
+      pcre2-dev \
     && git clone ${FDUPES_GIT} /tmp/fdupes \
     && cd /tmp/fdupes \
+    && autoreconf --install \
+    && ./configure \
     && make fdupes \
     && make install \
     && cd \
     && rm -rf /tmp/fdupes \
     && apk --no-cache del \
       alpine-sdk \
+      autoconf \
+      automake \
       git
 
 WORKDIR $ENTRYPOINT_HOME
